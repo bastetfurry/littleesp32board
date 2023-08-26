@@ -10,8 +10,6 @@
 
 void handle_NotFound();
 
-String SendHTML(uint8_t led1stat, uint8_t led2stat);
-
 /* Put your SSID & Password */
 const char *ssid = "ThemSSID";  // Enter SSID here
 const char *password = "ThemPassword";  //Enter Password here
