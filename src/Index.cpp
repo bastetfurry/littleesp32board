@@ -66,16 +66,19 @@ void Index::ReturnPage(int64_t parent)
     }
 
     std::string form = "<form action=\"/new\" method=\"post\">\n"
-                       "<input type=\"hidden\" name=\"parent\" value=\"" + std::to_string(parent) + "\">\n"
-                                                                                                    "<table>\n"
-                                                                                                    "<tr><td>User (16 max):</td><td><input type=\"text\" name=\"user\" value=\"Bernd\" maxlength=\"16\"></td></tr>\n"
-                                                                                                    "<tr><td>Topic (32 max):</td><td><input type=\"text\" name=\"topic\" value=\"" +
-                       newtopic + "\" maxlength=\"16\"></td></tr>\n"
-                                  "<tr><td>Body (4096 max):</td><td><textarea name=\"body\" rows=\"5\" cols=\"40\" maxlength=\"4096\"></textarea></td></tr>\n"
-                                  "<tr><td colspan=\"2\"><input type=\"submit\" value=\"Post\"></td></tr>\n"
-                                  "</table>\n"
-                                  "</form>\n"
-                                  "<hr>\n";
+                       "<input type=\"hidden\" name=\"parent\" value=\"" +
+                       std::to_string(parent) +
+                       "\">\n"
+                       "<table>\n"
+                       "<tr><td>User (16 max):</td><td><input type=\"text\" name=\"user\" value=\"Bernd\" maxlength=\"16\"></td></tr>\n"
+                       "<tr><td>Topic (32 max):</td><td><input type=\"text\" name=\"topic\" value=\"" +
+                       newtopic +
+                       "\" maxlength=\"16\"></td></tr>\n"
+                       "<tr><td>Body (4096 max):</td><td><textarea name=\"body\" rows=\"5\" cols=\"40\" maxlength=\"4096\"></textarea></td></tr>\n"
+                       "<tr><td colspan=\"2\"><input type=\"submit\" value=\"Post\"></td></tr>\n"
+                       "</table>\n"
+                       "</form>\n"
+                       "<hr>\n";
 
     server.send(200, "text/html", mainpage_header + form.c_str() + page.c_str() + mainpage_footer);
 }
